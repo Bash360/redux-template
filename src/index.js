@@ -7,9 +7,10 @@ import * as serviceWorker from './serviceWorker';
 import { Provider} from "react-redux";
 import { createStore,applyMiddleware } from "redux";
 import searchReducer from "./reducers/reducer";
+import { composeWithDevTools} from "redux-devtools-extension";
 
 const logger = createLogger();
-const store =createStore(searchReducer,applyMiddleware(logger));
+const store =createStore(searchReducer,composeWithDevTools(applyMiddleware(logger)));
 
 
 ReactDOM.render(<Provider store={store} ><App/></Provider>, document.getElementById('root'));
