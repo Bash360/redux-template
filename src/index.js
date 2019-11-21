@@ -8,9 +8,10 @@ import { Provider} from "react-redux";
 import { createStore,applyMiddleware } from "redux";
 import searchReducer from "./reducers/reducer";
 import { composeWithDevTools} from "redux-devtools-extension";
-
+import thunkMiddleware from "redux-thunk";
 const logger = createLogger();
-const store =createStore(searchReducer,composeWithDevTools(applyMiddleware(logger)));
+const middleware=[logger,thunkMiddleware]
+const store =createStore(searchReducer,composeWithDevTools(applyMiddleware(...middleware)));
 
 
 ReactDOM.render(<Provider store={store} ><App/></Provider>, document.getElementById('root'));
