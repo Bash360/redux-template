@@ -6,12 +6,12 @@ import {createLogger } from "redux-logger";
 import * as serviceWorker from './serviceWorker';
 import { Provider} from "react-redux";
 import { createStore,applyMiddleware } from "redux";
-import searchReducer from "./reducers/reducer";
+import rootReducer from "./reducers/";
 import { composeWithDevTools} from "redux-devtools-extension";
 import thunkMiddleware from "redux-thunk";
 const logger = createLogger();
 const middleware=[logger,thunkMiddleware]
-const store =createStore(searchReducer,composeWithDevTools(applyMiddleware(...middleware)));
+const store =createStore(rootReducer,composeWithDevTools(applyMiddleware(...middleware)));
 
 
 ReactDOM.render(<Provider store={store} ><App/></Provider>, document.getElementById('root'));
