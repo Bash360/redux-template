@@ -7,8 +7,8 @@ import { connect} from "react-redux";
 
 const mapStateToProps = state => { 
   return {
-    searchField: state.searchReducer.searchField,
-    restaurants: state.restaurantReducer.restaurants
+    searchField: state.searchField.searchField,
+    restaurants: state.restaurants.restaurants
   }
 }
 const mapDispatchToProps = (dispatch) =>

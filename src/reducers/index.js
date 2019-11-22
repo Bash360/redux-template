@@ -2,4 +2,4 @@ import { combineReducers } from "redux";
 import restaurantReducer from "./restaurant";
 import searchReducer from "./search";
 
-export default combineReducers({restaurantReducer,searchReducer});
+export default combineReducers({restaurants:restaurantReducer,searchField:searchReducer});
